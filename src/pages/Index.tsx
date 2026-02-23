@@ -35,18 +35,12 @@ const Index = () => {
       <Header />
 
       {/* Hero banner */}
-      <div className="relative h-48 md:h-64 overflow-hidden">
+      <div className="relative h-48 md:h-72 overflow-hidden">
         <img
           src={bitsPilaniHero}
           alt="BITS Pilani Campus"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-[center_30%]"
         />
-        <div className="absolute inset-0 bg-primary/50" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-primary-foreground animate-fade-in drop-shadow-lg">
-            Governance & Leadership
-          </h2>
-        </div>
       </div>
 
       {/* Main Tabs */}
