@@ -12,6 +12,10 @@ export default {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      display: ['Playfair Display', 'serif'],
+      body: ['Source Sans 3', 'sans-serif'],
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -56,6 +60,12 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+        },
+        bits: {
+          blue: "hsl(var(--bits-blue))",
+          gold: "hsl(var(--bits-gold))",
+          red: "hsl(var(--bits-red))",
+          sky: "hsl(var(--bits-sky))",
         },
       },
       borderRadius: {
