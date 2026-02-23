@@ -44,11 +44,12 @@ const gbMembers: Member[] = [
   { name: "Shri Sidharth Birla", designation: "BoG and GB", image: sidharthBirla },
   { name: "Shri K K Maheshwari", designation: "BoG and GB", image: kkMaheshwari },
   { name: "Shri Hemant Kumar", designation: "BoG, GB, and FC", image: hemantKumar },
-  { name: "Shri Jayant Sogani", designation: "GB" },
   { name: "Prof. L.K. Maheshwari", designation: "GB", image: lkMaheshwari },
   { name: "Prof. Devang V. Khakhar", designation: "GB", image: devangKhakhar },
   { name: "Shri K. Ramakrishnan", designation: "GB", image: kRamakrishnan },
   { name: "Col. S. Chakraborty (Retd.)", designation: "Registrar & Non-Member Secretary", image: sChakraborty },
+  { name: "Addl. Secretary, Technical Education", designation: "GB" },
+  { name: "Shri Jayant Sogani", designation: "GB" },
 ];
 
 interface GovernanceSectionProps {
