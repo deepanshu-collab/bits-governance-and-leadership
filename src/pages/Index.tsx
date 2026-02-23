@@ -36,7 +36,7 @@ const Index = () => {
       <Header />
 
       {/* Hero banner */}
-      <div className="relative h-80 md:h-[480px] overflow-hidden">
+      <div className="relative h-96 md:h-[540px] overflow-hidden">
         <img
           src={bitsPilaniHero}
           alt="BITS Pilani Campus with Clock Tower"
