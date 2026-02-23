@@ -39,7 +39,7 @@ const Index = () => {
         <img
           src={bitsPilaniHero}
           alt="BITS Pilani Campus with Clock Tower"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-[center_20%]"
         />
       </div>
 
