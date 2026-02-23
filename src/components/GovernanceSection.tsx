@@ -23,44 +23,33 @@ interface Member {
 }
 
 const bogMembers: Member[] = [
-  { name: "Dr. Kumar Mangalam Birla", designation: "Chairman", image: kumarMangalamBirla },
-  { name: "Smt. Shobhana Bhartia", designation: "Member", image: shobhanaBhartia },
-  { name: "Prof. V Ramgopal Rao", designation: "Vice Chancellor", image: ramgopalRao },
-  { name: "Prof. Suman Kundu", designation: "Member", image: sumanKundu },
-  { name: "Shri Sidharth Birla", designation: "Member", image: sidharthBirla },
-  { name: "Shri Hemant Kumar", designation: "Member", image: hemantKumar },
-  { name: "Shri Dilip Gaur", designation: "Member", image: dilipGaur },
-  { name: "Shri K K Maheshwari", designation: "Member", image: kkMaheshwari },
-  { name: "Shri Sunil Kumar Barnwal", designation: "Member", image: sunilKumarBarnwal },
-  { name: "Smt. Saumya Gupta", designation: "Member", image: saumyaGupta },
-  { name: "Shri Akshay Poddar", designation: "Member", image: akshayPoddar },
+  { name: "Dr. Kumar Mangalam Birla", designation: "BoG, GB, and FC", image: kumarMangalamBirla },
+  { name: "Smt. Shobhana Bhartia", designation: "BoG and GB", image: shobhanaBhartia },
+  { name: "Prof. V Ramgopal Rao", designation: "BoG, GB, and FC", image: ramgopalRao },
+  { name: "Prof. Suman Kundu", designation: "BoG", image: sumanKundu },
+  { name: "Shri Sidharth Birla", designation: "BoG and GB", image: sidharthBirla },
+  { name: "Shri Hemant Kumar", designation: "BoG, GB, and FC", image: hemantKumar },
+  { name: "Shri Dilip Gaur", designation: "BoG", image: dilipGaur },
+  { name: "Shri K K Maheshwari", designation: "BoG and GB", image: kkMaheshwari },
+  { name: "Shri Sunil Kumar Barnwal", designation: "BoG", image: sunilKumarBarnwal },
+  { name: "Smt. Saumya Gupta", designation: "BoG", image: saumyaGupta },
+  { name: "Shri Akshay Poddar", designation: "BoG", image: akshayPoddar },
+  { name: "Col. S. Chakraborty (Retd.)", designation: "Registrar & Non-Member Secretary", image: sChakraborty },
 ];
-
-const bogSecretary: Member = {
-  name: "Col. S. Chakraborty (Retd.)",
-  designation: "Registrar & Non-Member Secretary",
-  image: sChakraborty,
-};
 
 const gbMembers: Member[] = [
-  { name: "Dr. Kumar Mangalam Birla", designation: "Chairman", image: kumarMangalamBirla },
-  { name: "Smt. Shobhana Bhartia", designation: "Member", image: shobhanaBhartia },
-  { name: "Prof. V Ramgopal Rao", designation: "Vice Chancellor", image: ramgopalRao },
-  { name: "Shri Sidharth Birla", designation: "Member", image: sidharthBirla },
-  { name: "Shri K K Maheshwari", designation: "Member", image: kkMaheshwari },
-  { name: "Shri Hemant Kumar", designation: "Member", image: hemantKumar },
-  { name: "Shri Jayant Sogani", designation: "Member" },
-  { name: "Additional Secretary, Technical Education", designation: "Member" },
-  { name: "Prof. L.K. Maheshwari", designation: "Member", image: lkMaheshwari },
-  { name: "Prof. Devang V. Khakhar", designation: "Member", image: devangKhakhar },
-  { name: "Shri K. Ramakrishnan", designation: "Member", image: kRamakrishnan },
+  { name: "Dr. Kumar Mangalam Birla", designation: "BoG, GB, and FC", image: kumarMangalamBirla },
+  { name: "Smt. Shobhana Bhartia", designation: "BoG and GB", image: shobhanaBhartia },
+  { name: "Prof. V Ramgopal Rao", designation: "BoG, GB, and FC", image: ramgopalRao },
+  { name: "Shri Sidharth Birla", designation: "BoG and GB", image: sidharthBirla },
+  { name: "Shri K K Maheshwari", designation: "BoG and GB", image: kkMaheshwari },
+  { name: "Shri Hemant Kumar", designation: "BoG, GB, and FC", image: hemantKumar },
+  { name: "Shri Jayant Sogani", designation: "GB" },
+  { name: "Prof. L.K. Maheshwari", designation: "GB", image: lkMaheshwari },
+  { name: "Prof. Devang V. Khakhar", designation: "GB", image: devangKhakhar },
+  { name: "Shri K. Ramakrishnan", designation: "GB", image: kRamakrishnan },
+  { name: "Col. S. Chakraborty (Retd.)", designation: "Registrar & Non-Member Secretary", image: sChakraborty },
 ];
-
-const gbSecretary: Member = {
-  name: "Col. S. Chakraborty (Retd.)",
-  designation: "Registrar & Non-Member Secretary",
-  image: sChakraborty,
-};
 
 interface GovernanceSectionProps {
   section: "general-body" | "board-of-governors";
@@ -68,7 +57,6 @@ interface GovernanceSectionProps {
 
 const GovernanceSection = ({ section }: GovernanceSectionProps) => {
   const members = section === "general-body" ? gbMembers : bogMembers;
-  const secretary = section === "general-body" ? gbSecretary : bogSecretary;
   const title = section === "general-body" ? "General Body" : "Board of Governors";
 
   return (
@@ -90,22 +78,6 @@ const GovernanceSection = ({ section }: GovernanceSectionProps) => {
             />
           </div>
         ))}
-      </div>
-
-      {/* Secretary */}
-      <div className="mt-10 pt-8 border-t border-border">
-        <h3 className="text-lg font-display font-semibold text-muted-foreground mb-4 text-center">
-          Non-Member Secretary
-        </h3>
-        <div className="flex justify-center">
-          <div className="animate-slide-up" style={{ animationDelay: "200ms", animationFillMode: "both" }}>
-            <LeaderCard
-              name={secretary.name}
-              designation={secretary.designation}
-              image={secretary.image || ""}
-            />
-          </div>
-        </div>
       </div>
     </div>
   );
