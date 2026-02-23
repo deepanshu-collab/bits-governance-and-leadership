@@ -3,15 +3,16 @@ import Header from "@/components/Header";
 import SenateSection from "@/components/SenateSection";
 import EmptySection from "@/components/EmptySection";
 import LeadershipSection from "@/components/LeadershipSection";
+import GovernanceSection from "@/components/GovernanceSection";
 import bitsPilaniHero from "@/assets/bits-clocktower.jpg";
 
 type MainTab = "governance" | "leadership";
-type GovernanceSubTab = "governor-body" | "board-of-governors" | "senate";
+type GovernanceSubTab = "general-body" | "board-of-governors" | "senate";
 type LeadershipSubTab = "vc-directors" | "deans-mumbai";
 
 const Index = () => {
   const [mainTab, setMainTab] = useState<MainTab>("governance");
-  const [govSubTab, setGovSubTab] = useState<GovernanceSubTab>("senate");
+  const [govSubTab, setGovSubTab] = useState<GovernanceSubTab>("general-body");
   const [leaderSubTab, setLeaderSubTab] = useState<LeadershipSubTab>("vc-directors");
 
   const mainTabs: { id: MainTab; label: string }[] = [
@@ -20,7 +21,7 @@ const Index = () => {
   ];
 
   const govSubTabs: { id: GovernanceSubTab; label: string }[] = [
-    { id: "governor-body", label: "Governor Body" },
+    { id: "general-body", label: "General Body" },
     { id: "board-of-governors", label: "Board of Governors" },
     { id: "senate", label: "Senate" },
   ];
@@ -104,11 +105,11 @@ const Index = () => {
       {/* Content */}
       <main className="container mx-auto px-4 py-10 md:py-14">
         <div className="animate-fade-in" key={`${mainTab}-${govSubTab}-${leaderSubTab}`}>
-          {mainTab === "governance" && govSubTab === "governor-body" && (
-            <EmptySection title="Governor Body" />
+          {mainTab === "governance" && govSubTab === "general-body" && (
+            <GovernanceSection section="general-body" />
           )}
           {mainTab === "governance" && govSubTab === "board-of-governors" && (
-            <EmptySection title="Board of Governors" />
+            <GovernanceSection section="board-of-governors" />
           )}
           {mainTab === "governance" && govSubTab === "senate" && <SenateSection />}
           {mainTab === "leadership" && (
