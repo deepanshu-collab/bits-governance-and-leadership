@@ -26,9 +26,15 @@ const LeaderCard = ({ name, designation, image }: LeaderCardProps) => {
         <h3 className="font-display font-semibold text-foreground text-sm leading-tight">
           {name}
         </h3>
-        <p className="text-xs text-muted-foreground mt-1 font-body leading-snug">
-          {designation}
-        </p>
+        {designation && (
+          <p className={`text-xs mt-1 font-body leading-snug font-semibold ${
+            ["Chancellor", "Pro Chancellor", "Vice Chancellor"].includes(designation)
+              ? "text-secondary"
+              : "text-muted-foreground"
+          }`}>
+            {designation}
+          </p>
+        )}
       </div>
     </div>
   );
