@@ -33,8 +33,8 @@ const bogMembers: Member[] = [
   { name: "Shri K K Maheshwari", designation: "BoG and GB", image: kkMaheshwari },
   { name: "Smt. Saumya Gupta", designation: "BoG", image: saumyaGupta },
   { name: "Shri Akshay Poddar", designation: "BoG", image: akshayPoddar },
-  { name: "Col. S. Chakraborty (Retd.)", designation: "Registrar & Non-Member Secretary", image: sChakraborty },
   { name: "Shri Sunil Kumar Barnwal", designation: "BoG", image: sunilKumarBarnwal },
+  { name: "Col. S. Chakraborty (Retd.)", designation: "Registrar & Non-Member Secretary", image: sChakraborty },
 ];
 
 const gbMembers: Member[] = [
