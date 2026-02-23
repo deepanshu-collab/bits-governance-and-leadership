@@ -31,10 +31,10 @@ const bogMembers: Member[] = [
   { name: "Shri Hemant Kumar", designation: "BoG, GB, and FC", image: hemantKumar },
   { name: "Shri Dilip Gaur", designation: "BoG", image: dilipGaur },
   { name: "Shri K K Maheshwari", designation: "BoG and GB", image: kkMaheshwari },
-  { name: "Shri Sunil Kumar Barnwal", designation: "BoG", image: sunilKumarBarnwal },
   { name: "Smt. Saumya Gupta", designation: "BoG", image: saumyaGupta },
   { name: "Shri Akshay Poddar", designation: "BoG", image: akshayPoddar },
   { name: "Col. S. Chakraborty (Retd.)", designation: "Registrar & Non-Member Secretary", image: sChakraborty },
+  { name: "Additional Secretary, Technical Education", designation: "BoG" },
 ];
 
 const gbMembers: Member[] = [
@@ -48,7 +48,7 @@ const gbMembers: Member[] = [
   { name: "Prof. Devang V. Khakhar", designation: "GB", image: devangKhakhar },
   { name: "Shri K. Ramakrishnan", designation: "GB", image: kRamakrishnan },
   { name: "Col. S. Chakraborty (Retd.)", designation: "Registrar & Non-Member Secretary", image: sChakraborty },
-  { name: "Addl. Secretary, Technical Education", designation: "GB" },
+  { name: "Additional Secretary, Technical Education", designation: "GB" },
   { name: "Shri Jayant Sogani", designation: "GB" },
 ];
 
