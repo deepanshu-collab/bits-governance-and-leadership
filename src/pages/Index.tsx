@@ -41,25 +41,26 @@ const Index = () => {
           alt="BITS Pilani Campus with Clock Tower"
           className="w-full h-full object-cover object-[center_20%]"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/20 via-transparent to-background" />
       </div>
 
       {/* Main Tabs */}
-      <div className="border-b border-border bg-card sticky top-0 z-10 shadow-sm">
+      <div className="border-b border-border bg-card/95 backdrop-blur-sm sticky top-0 z-10 shadow-md">
         <div className="container mx-auto px-4">
           <nav className="flex gap-0">
             {mainTabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setMainTab(tab.id)}
-                className={`relative px-6 py-4 text-base font-semibold font-body transition-colors duration-200 ${
+                className={`relative px-8 py-4 text-base font-semibold font-body transition-all duration-300 ${
                   mainTab === tab.id
                     ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/40"
                 }`}
               >
                 {tab.label}
                 {mainTab === tab.id && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[3px] bg-secondary rounded-t" />
+                  <span className="absolute bottom-0 left-2 right-2 h-[3px] bg-secondary rounded-t transition-all duration-300" />
                 )}
               </button>
             ))}
@@ -68,7 +69,7 @@ const Index = () => {
       </div>
 
       {/* Sub Tabs */}
-      <div className="border-b border-border bg-muted/30">
+      <div className="border-b border-border bg-muted/20">
         <div className="container mx-auto px-4">
           <nav className="flex gap-0 overflow-x-auto">
             {(mainTab === "governance" ? govSubTabs : leaderSubTabs).map((tab) => {
@@ -84,10 +85,10 @@ const Index = () => {
                       ? setGovSubTab(tab.id as GovernanceSubTab)
                       : setLeaderSubTab(tab.id as LeadershipSubTab)
                   }
-                  className={`px-5 py-3 text-sm font-medium font-body whitespace-nowrap transition-colors duration-200 border-b-2 ${
+                  className={`px-5 py-3 text-sm font-medium font-body whitespace-nowrap transition-all duration-300 border-b-2 ${
                     isActive
-                      ? "border-accent text-accent"
-                      : "border-transparent text-muted-foreground hover:text-foreground"
+                      ? "border-secondary text-primary font-semibold"
+                      : "border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground/30"
                   }`}
                 >
                   {tab.label}
@@ -99,25 +100,29 @@ const Index = () => {
       </div>
 
       {/* Content */}
-      <main className="container mx-auto px-4 py-8 md:py-12">
-        {mainTab === "governance" && govSubTab === "governor-body" && (
-          <EmptySection title="Governor Body" />
-        )}
-        {mainTab === "governance" && govSubTab === "board-of-governors" && (
-          <EmptySection title="Board of Governors" />
-        )}
-        {mainTab === "governance" && govSubTab === "senate" && <SenateSection />}
-        {mainTab === "leadership" && (
-          <LeadershipSection section={leaderSubTab} />
-        )}
+      <main className="container mx-auto px-4 py-10 md:py-14">
+        <div className="animate-fade-in" key={`${mainTab}-${govSubTab}-${leaderSubTab}`}>
+          {mainTab === "governance" && govSubTab === "governor-body" && (
+            <EmptySection title="Governor Body" />
+          )}
+          {mainTab === "governance" && govSubTab === "board-of-governors" && (
+            <EmptySection title="Board of Governors" />
+          )}
+          {mainTab === "governance" && govSubTab === "senate" && <SenateSection />}
+          {mainTab === "leadership" && (
+            <LeadershipSection section={leaderSubTab} />
+          )}
+        </div>
       </main>
 
       {/* Footer */}
-      <footer className="bg-primary text-primary-foreground py-6 mt-12">
+      <footer className="bg-primary text-primary-foreground py-8 mt-16">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-sm font-body opacity-80">
-            © {new Date().getFullYear()} Birla Institute of Technology & Science, Pilani. All rights reserved.
-          </p>
+          <div className="border-t border-primary-foreground/20 pt-6">
+            <p className="text-sm font-body opacity-80">
+              © {new Date().getFullYear()} Birla Institute of Technology & Science, Pilani. All rights reserved.
+            </p>
+          </div>
         </div>
       </footer>
     </div>
