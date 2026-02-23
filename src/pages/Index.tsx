@@ -40,8 +40,10 @@ const Index = () => {
           src={bitsPilaniHero}
           alt="BITS Pilani Campus with Clock Tower"
           className="w-full h-full object-cover object-[center_20%]"
+          style={{ imageRendering: "auto" }}
+          loading="eager"
+          decoding="sync"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/20 via-transparent to-background" />
       </div>
 
       {/* Main Tabs */}
