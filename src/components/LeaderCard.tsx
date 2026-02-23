@@ -6,19 +6,19 @@ interface LeaderCardProps {
 
 const LeaderCard = ({ name, designation, image }: LeaderCardProps) => {
   return (
-    <div className="group bg-card rounded-lg border border-border shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden animate-slide-up max-w-[220px] mx-auto w-full">
+    <div className="group bg-card rounded-lg border border-border shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden max-w-[220px] mx-auto w-full hover:-translate-y-1">
       <div className="aspect-square overflow-hidden bg-muted">
         <img
           src={image}
           alt={name}
-          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
         />
       </div>
-      <div className="p-3 text-center">
+      <div className="p-3 text-center border-t border-border/50">
         <h3 className="font-display font-semibold text-foreground text-sm leading-tight">
           {name}
         </h3>
-        <p className="text-xs text-muted-foreground mt-1 font-body">
+        <p className="text-xs text-muted-foreground mt-1 font-body leading-snug">
           {designation}
         </p>
       </div>

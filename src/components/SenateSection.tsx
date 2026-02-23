@@ -18,7 +18,7 @@ const senateMembers = [
 
 const SenateSection = () => {
   return (
-    <div className="animate-fade-in">
+    <div>
       <h2 className="text-2xl md:text-3xl font-display font-bold text-primary mb-2">
         Senate
       </h2>
@@ -30,10 +30,10 @@ const SenateSection = () => {
           {senateMembers.map((member, index) => (
             <li
               key={index}
-              className="px-6 py-4 flex gap-4 items-start hover:bg-muted/50 transition-colors duration-200"
-              style={{ animationDelay: `${index * 50}ms` }}
+              className="px-6 py-4 flex gap-4 items-start hover:bg-muted/50 transition-all duration-300 animate-slide-up"
+              style={{ animationDelay: `${index * 60}ms`, animationFillMode: "both" }}
             >
-              <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold font-body">
+              <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold font-body shadow-sm">
                 {index + 1}
               </span>
               <span className="text-foreground font-body leading-relaxed pt-1">

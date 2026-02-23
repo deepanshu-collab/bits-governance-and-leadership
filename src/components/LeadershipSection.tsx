@@ -36,13 +36,19 @@ const LeadershipSection = ({ section }: LeadershipSectionProps) => {
   const title = section === "vc-directors" ? "Vice Chancellor & Directors" : "Deans of Mumbai Campus";
 
   return (
-    <div className="animate-fade-in">
-      <h2 className="text-2xl md:text-3xl font-display font-bold text-primary mb-6">
+    <div>
+      <h2 className="text-2xl md:text-3xl font-display font-bold text-primary mb-8">
         {title}
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {leaders.map((leader) => (
-          <LeaderCard key={leader.name} {...leader} />
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+        {leaders.map((leader, index) => (
+          <div
+            key={leader.name}
+            className="animate-slide-up"
+            style={{ animationDelay: `${index * 80}ms`, animationFillMode: "both" }}
+          >
+            <LeaderCard {...leader} />
+          </div>
         ))}
       </div>
     </div>
