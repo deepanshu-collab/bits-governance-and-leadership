@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import SenateSection from "@/components/SenateSection";
 import EmptySection from "@/components/EmptySection";
 import LeadershipSection from "@/components/LeadershipSection";
-import bitsPilaniHero from "@/assets/bits-pilani-hero.jpg";
+import bitsPilaniHero from "@/assets/bits-clocktower.jpg";
 
 type MainTab = "governance" | "leadership";
 type GovernanceSubTab = "governor-body" | "board-of-governors" | "senate";
