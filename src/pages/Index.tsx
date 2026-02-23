@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import SenateSection from "@/components/SenateSection";
 import EmptySection from "@/components/EmptySection";
 import LeadershipSection from "@/components/LeadershipSection";
+import bitsPilaniHero from "@/assets/bits-pilani-hero.jpg";
 
 type MainTab = "governance" | "leadership";
 type GovernanceSubTab = "governor-body" | "board-of-governors" | "senate";
@@ -34,14 +35,17 @@ const Index = () => {
       <Header />
 
       {/* Hero banner */}
-      <div className="bg-primary py-8 md:py-12">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-primary-foreground animate-fade-in">
-            About BITS Pilani
-          </h2>
-          <p className="text-primary-foreground/80 mt-2 text-lg font-body animate-fade-in-delay">
+      <div className="relative h-48 md:h-64 overflow-hidden">
+        <img
+          src={bitsPilaniHero}
+          alt="BITS Pilani Campus"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-primary/50" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-primary-foreground animate-fade-in drop-shadow-lg">
             Governance & Leadership
-          </p>
+          </h2>
         </div>
       </div>
 
