@@ -49,8 +49,8 @@ const gbMembers: Member[] = [
   { name: "Prof. Devang V. Khakhar", designation: "", image: devangKhakhar },
   { name: "Shri K. Ramakrishnan", designation: "", image: kRamakrishnan },
   { name: "Col. S. Chakraborty (Retd.)", designation: "Registrar and Non-Member Secretary", image: sChakraborty },
-  { name: "Additional Secretary, Technical Education", designation: "" },
   { name: "Shri Jayant Sogani", designation: "", image: jayantSogani },
+  { name: "Additional Secretary, Technical Education", designation: "" },
 ];
 
 interface GovernanceSectionProps {
