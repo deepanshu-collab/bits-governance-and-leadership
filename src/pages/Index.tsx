@@ -8,12 +8,10 @@ import bitsPilaniHero from "@/assets/bits-clocktower.jpg";
 
 type MainTab = "governance" | "leadership";
 type GovernanceSubTab = "general-body" | "board-of-governors" | "senate";
-type LeadershipSubTab = "vc-directors" | "deans-mumbai";
 
 const Index = () => {
   const [mainTab, setMainTab] = useState<MainTab>("governance");
   const [govSubTab, setGovSubTab] = useState<GovernanceSubTab>("general-body");
-  const [leaderSubTab, setLeaderSubTab] = useState<LeadershipSubTab>("vc-directors");
 
   const mainTabs: { id: MainTab; label: string }[] = [
     { id: "governance", label: "Governance" },
@@ -24,11 +22,6 @@ const Index = () => {
     { id: "general-body", label: "General Body" },
     { id: "board-of-governors", label: "Board of Governors" },
     { id: "senate", label: "Senate" },
-  ];
-
-  const leaderSubTabs: { id: LeadershipSubTab; label: string }[] = [
-    { id: "vc-directors", label: "VC and Directors" },
-    { id: "deans-mumbai", label: "Deans of Mumbai Campus" },
   ];
 
   return (
@@ -71,40 +64,32 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Sub Tabs */}
-      <div className="border-b border-border bg-muted/20">
-        <div className="container mx-auto px-4">
-          <nav className="flex gap-0 overflow-x-auto">
-            {(mainTab === "governance" ? govSubTabs : leaderSubTabs).map((tab) => {
-              const isActive =
-                mainTab === "governance"
-                  ? govSubTab === tab.id
-                  : leaderSubTab === tab.id;
-              return (
+      {/* Sub Tabs - only for governance */}
+      {mainTab === "governance" && (
+        <div className="border-b border-border bg-muted/20">
+          <div className="container mx-auto px-4">
+            <nav className="flex gap-0 overflow-x-auto">
+              {govSubTabs.map((tab) => (
                 <button
                   key={tab.id}
-                  onClick={() =>
-                    mainTab === "governance"
-                      ? setGovSubTab(tab.id as GovernanceSubTab)
-                      : setLeaderSubTab(tab.id as LeadershipSubTab)
-                  }
+                  onClick={() => setGovSubTab(tab.id)}
                   className={`px-5 py-3 text-sm font-medium font-body whitespace-nowrap transition-all duration-300 border-b-2 ${
-                    isActive
+                    govSubTab === tab.id
                       ? "border-secondary text-primary font-semibold"
                       : "border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground/30"
                   }`}
                 >
                   {tab.label}
                 </button>
-              );
-            })}
-          </nav>
+              ))}
+            </nav>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Content */}
       <main className="container mx-auto px-4 py-10 md:py-14">
-        <div className="animate-fade-in" key={`${mainTab}-${govSubTab}-${leaderSubTab}`}>
+        <div className="animate-fade-in" key={`${mainTab}-${govSubTab}`}>
           {mainTab === "governance" && govSubTab === "general-body" && (
             <GovernanceSection section="general-body" />
           )}
@@ -112,9 +97,7 @@ const Index = () => {
             <GovernanceSection section="board-of-governors" />
           )}
           {mainTab === "governance" && govSubTab === "senate" && <SenateSection />}
-          {mainTab === "leadership" && (
-            <LeadershipSection section={leaderSubTab} />
-          )}
+          {mainTab === "leadership" && <LeadershipSection />}
         </div>
       </main>
 
