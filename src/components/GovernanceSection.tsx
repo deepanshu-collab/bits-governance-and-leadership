@@ -15,6 +15,7 @@ import sChakraborty from "@/assets/governance/s-chakraborty.jpg";
 import lkMaheshwari from "@/assets/governance/lk-maheshwari.jpg";
 import devangKhakhar from "@/assets/governance/devang-khakhar.jpg";
 import kRamakrishnan from "@/assets/governance/k-ramakrishnan.jpg";
+import jayantSogani from "@/assets/governance/jayant-sogani.jpg";
 
 interface Member {
   name: string;
@@ -49,7 +50,7 @@ const gbMembers: Member[] = [
   { name: "Shri K. Ramakrishnan", designation: "", image: kRamakrishnan },
   { name: "Col. S. Chakraborty (Retd.)", designation: "Registrar and Non-Member Secretary", image: sChakraborty },
   { name: "Additional Secretary, Technical Education", designation: "" },
-  { name: "Shri Jayant Sogani", designation: "" },
+  { name: "Shri Jayant Sogani", designation: "", image: jayantSogani },
 ];
 
 interface GovernanceSectionProps {

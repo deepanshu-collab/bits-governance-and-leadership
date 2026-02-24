@@ -27,55 +27,32 @@ const deansMumbai = [
 ];
 
 const LeadershipSection = () => {
+  const sections = [
+    { title: "Vice Chancellor", members: [viceChancellor] },
+    { title: "Directors", members: directors },
+    { title: "Deans of Mumbai Campus", members: deansMumbai },
+  ];
+
   return (
-    <div className="space-y-12">
-      {/* Vice Chancellor */}
-      <div>
-        <h2 className="text-2xl md:text-3xl font-display font-bold text-primary mb-8">
-          Vice Chancellor
-        </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-          <div className="animate-slide-up" style={{ animationDelay: "0ms", animationFillMode: "both" }}>
-            <LeaderCard {...viceChancellor} />
+    <div className="space-y-14">
+      {sections.map((section) => (
+        <section key={section.title}>
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-primary mb-8 pb-3 border-b-2 border-secondary/30">
+            {section.title}
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            {section.members.map((leader, index) => (
+              <div
+                key={leader.name}
+                className="animate-slide-up"
+                style={{ animationDelay: `${index * 80}ms`, animationFillMode: "both" }}
+              >
+                <LeaderCard {...leader} />
+              </div>
+            ))}
           </div>
-        </div>
-      </div>
-
-      {/* Directors */}
-      <div>
-        <h2 className="text-2xl md:text-3xl font-display font-bold text-primary mb-8">
-          Directors
-        </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-          {directors.map((leader, index) => (
-            <div
-              key={leader.name}
-              className="animate-slide-up"
-              style={{ animationDelay: `${index * 80}ms`, animationFillMode: "both" }}
-            >
-              <LeaderCard {...leader} />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Deans of Mumbai Campus */}
-      <div>
-        <h2 className="text-2xl md:text-3xl font-display font-bold text-primary mb-8">
-          Deans of Mumbai Campus
-        </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-          {deansMumbai.map((leader, index) => (
-            <div
-              key={leader.name}
-              className="animate-slide-up"
-              style={{ animationDelay: `${index * 80}ms`, animationFillMode: "both" }}
-            >
-              <LeaderCard {...leader} />
-            </div>
-          ))}
-        </div>
-      </div>
+        </section>
+      ))}
     </div>
   );
 };
