@@ -13,8 +13,8 @@ const senateMembers = [
   "Such other members of the staff not exceeding four as may be designated by the Board of Governors for a term of 3 years",
   "Four persons not being employees of the Institute to be nominated by the Chancellor of the Institute after consulting the Vice-Chancellor from amongst educationists/industrialists of repute for a term of 3 years",
   "Four regular full-time First-Degree students of the Institute (one from each campus) to be nominated by the Chancellor of the Institute out of a panel of 8 names to be submitted by the President of the Students Union of each campus, for a term of one year",
-  "One student each from High Degree and Ph.D. as Student Invitees",
-  "Visiting Professors, Professor of Practice, Adjunct Professors, Emeritus Professors and Distinguished Professors and Distinguished Senior Professors as invitees",
+  "One student each from Higher degree and Ph.D. as Student Invitees",
+  "Visiting Professors, Professor of Practice, Adjunct Professors, Emeritus Professors, Distinguished Professors and Distinguished Senior Professors as invitees",
 ];
 
 const SenateSection = () => {
